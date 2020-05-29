@@ -1,0 +1,47 @@
+.card{
+	cursor: pointer;
+	width: 90%;
+	height: 25rem;
+	margin: auto;
+	margin-bottom: 25px;
+}
+
+.front, .back{
+	width: 100%;
+	height: 100%;
+	border-radius: 8px;
+	overflow: hidden;
+	backface-visibility: hidden;
+	position: absolute;
+	transition: transform .4s linear;
+}
+
+.front img{
+	height: inherit;
+}
+
+.front{
+	transform: perspective(600px) rotateY(0deg);
+}
+
+.back{
+	background-image: url("../../img/background2.jpg");
+	transform: perspective(600px) rotateY(180deg);
+}
+
+.back-content{
+	color: #fff;
+	font-family: 'Poppins', sans-serif;
+    padding: 7px;
+    margin-top: 20px;
+	font-size: 16px;
+	line-height: 18px;
+}
+
+.card:hover > .front{
+	transform: perspective(600px) rotateY(-180deg);
+}
+
+.card:hover > .back{
+	transform: perspective(600px) rotateY(0deg);
+}
